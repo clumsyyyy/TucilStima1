@@ -17,4 +17,12 @@ public class Matrix {
             System.out.println();
         }
     }
+    
+    public void blankMatrix(){
+        for(int i = 0; i < this.rows; i++){
+            for(int j = 0; j < this.cols; j++){
+                this.buffer[i][j] = ".";
+            }
+        }
+    }
 }

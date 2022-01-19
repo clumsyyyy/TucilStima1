@@ -14,6 +14,16 @@ public class Matcher {
                 }
             }
         }
+        if(flag){
+            Matrix temp = new Matrix(m.rows, m.cols);
+            temp.blankMatrix();
+            int a = 0;
+            while (a < keyword.length){
+                temp.buffer[i][j - a] = m.buffer[i][j - a];
+                a++;
+            }
+            temp.printMatrix();
+        }
         return flag;
     }
 
@@ -31,6 +41,16 @@ public class Matcher {
                     count++;
                 }
             }
+        }
+        if(flag){
+            Matrix temp = new Matrix(m.rows, m.cols);
+            temp.blankMatrix();
+            int a = 0;
+            while (a < keyword.length){
+                temp.buffer[i][j + a] = m.buffer[i][j + a];
+                a++;
+            }
+            temp.printMatrix();
         }
         return flag;
     }   
@@ -50,6 +70,16 @@ public class Matcher {
                 }
             }
         }
+        if(flag){
+            Matrix temp = new Matrix(m.rows, m.cols);
+            temp.blankMatrix();
+            int a = 0;
+            while (a < keyword.length){
+                temp.buffer[i - a][j] = m.buffer[i - a][j];
+                a++;
+            }
+            temp.printMatrix();
+        }
         return flag;
     }
 
@@ -67,6 +97,16 @@ public class Matcher {
                     count++;
                 }
             }
+        }
+        if(flag){
+            Matrix temp = new Matrix(m.rows, m.cols);
+            temp.blankMatrix();
+            int a = 0;
+            while (a < keyword.length){
+                temp.buffer[i + a][j] = m.buffer[i + a][j];
+                a++;
+            }
+            temp.printMatrix();
         }
         return flag;
     }
@@ -86,6 +126,16 @@ public class Matcher {
                 }
             }
         }
+        if(flag){
+            Matrix temp = new Matrix(m.rows, m.cols);
+            temp.blankMatrix();
+            int a = 0;
+            while (a < keyword.length){
+                temp.buffer[i - a][j - a] = m.buffer[i - a][j = a];
+                a++;
+            }
+            temp.printMatrix();
+        }
         return flag;
     }
 
@@ -103,6 +153,16 @@ public class Matcher {
                     count++;
                 }
             }
+        }
+        if(flag){
+            Matrix temp = new Matrix(m.rows, m.cols);
+            temp.blankMatrix();
+            int a = 0;
+            while (a < keyword.length){
+                temp.buffer[i + a][j - a] = m.buffer[i + a][j - a];
+                a++;
+            }
+            temp.printMatrix();
         }
         return flag;
     }
@@ -122,6 +182,16 @@ public class Matcher {
                 }
             }
         }
+        if(flag){
+            Matrix temp = new Matrix(m.rows, m.cols);
+            temp.blankMatrix();
+            int a = 0;
+            while (a < keyword.length){
+                temp.buffer[i - a][j + a] = m.buffer[i - a][j + a];
+                a++;
+            }
+            temp.printMatrix();
+        }
         return flag;
     }
 
@@ -139,6 +209,16 @@ public class Matcher {
                     count++;
                 }
             }
+        }
+        if(flag){
+            Matrix temp = new Matrix(m.rows, m.cols);
+            temp.blankMatrix();
+            int a = 0;
+            while (a < keyword.length){
+                temp.buffer[i + a][j + a] = m.buffer[i + a][j + a];
+                a++;
+            }
+            temp.printMatrix();
         }
         return flag;
     }

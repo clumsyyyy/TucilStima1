@@ -29,7 +29,7 @@ public class SearchWord {
                     }
                     else if (Matcher.checkDRU(m, keyArr, i, j)){
                         System.out.println(keyword + " FOUND DIAGONALLY RIGHT UPPER");
-                    }
+                    } 
                 }
             }
         }
