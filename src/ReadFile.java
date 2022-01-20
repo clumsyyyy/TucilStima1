@@ -6,16 +6,15 @@ import java.util.ArrayList;
 public class ReadFile{
     public static void readText(Matrix m, ArrayList<String> keywords, Scanner sc){
 
-        /* input filename */
-        String filename = "sample.txt";
-        
-        // filename = sc.nextLine();
-        // while (filename == ""){
-        //     System.out.println("Input your filename: ");
-        //     filename = sc.nextLine();
-        // }
-        /* cek baca */
 
+        String filename = "";
+
+        System.out.print("Input your filename (with .txt): ");
+        filename = sc.nextLine();
+        while (filename == ""){
+            System.out.print("Input your filename (with .txt): ");
+            filename = sc.nextLine();
+        }
         try{
             File text = new File("test/" + filename);
             Scanner sizeReader = new Scanner(text);
