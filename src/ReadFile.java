@@ -21,7 +21,6 @@ public class ReadFile{
 
             while (sizeReader.hasNextLine() && !sizeReader.nextLine().equals("")){
                 rowSize++;
-                
             }
             
             sizeReader.close();

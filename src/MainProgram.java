@@ -25,7 +25,7 @@ public class MainProgram {
         }
 
         System.out.println("Comparison time in total (parsing excluded): " + duration + " ms.");
-        System.out.println("Press any key to quit...");
-        String space = sc.nextLine();
+        // System.out.println("Press any key to quit...");
+        // String space = sc.nextLine();
     }
 }
