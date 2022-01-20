@@ -14,6 +14,7 @@ public class MainProgram {
 
         System.out.println("Read puzzle from the file: ");
         m.printMatrix();
+        System.out.println("Size: " + m.rows + " x " + m.cols);
         System.out.println("\nThere are " + keywords.size() +" read keywords from the file: ");
         for(int i = 0; i < keywords.size(); i++){
             System.out.println("- " + keywords.get(i));
@@ -24,5 +25,7 @@ public class MainProgram {
         }
 
         System.out.println("Comparison time in total (parsing excluded): " + duration + " ms.");
+        System.out.println("Press any key to quit...");
+        String space = sc.nextLine();
     }
 }

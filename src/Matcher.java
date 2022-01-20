@@ -131,7 +131,7 @@ public class Matcher {
             temp.blankMatrix();
             int a = 0;
             while (a < keyword.length){
-                temp.buffer[i - a][j - a] = m.buffer[i - a][j = a];
+                temp.buffer[i - a][j - a] = m.buffer[i - a][j - a];
                 a++;
             }
             temp.printMatrix();

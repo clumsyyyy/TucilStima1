@@ -6,7 +6,6 @@ import java.util.ArrayList;
 public class ReadFile{
     public static void readText(Matrix m, ArrayList<String> keywords, Scanner sc){
 
-
         String filename = "";
 
         System.out.print("Input your filename (with .txt): ");
@@ -18,16 +17,15 @@ public class ReadFile{
         try{
             File text = new File("test/" + filename);
             Scanner sizeReader = new Scanner(text);
-            int rowSize = 0;
+            int rowSize = 1;
 
-            while (sizeReader.hasNextLine() && sizeReader.nextLine() != "\n"){
+            while (sizeReader.hasNextLine() && !sizeReader.nextLine().equals("")){
                 rowSize++;
-                sizeReader.nextLine();
+                
             }
             
             sizeReader.close();
             m.rows = rowSize - 1;
-
             Scanner lineReader = new Scanner(text);
 
             try{
@@ -38,13 +36,14 @@ public class ReadFile{
                     for(int j = 0; j < m.cols; j++){
                         m.buffer[i][j] = rows[j];
                     }
+
                 }
                 lineReader.nextLine();
-
                 while(lineReader.hasNextLine()){
                     String kw = lineReader.nextLine();
                     keywords.add(kw);
                 }
+                
             } finally {
                 lineReader.close();
             }
