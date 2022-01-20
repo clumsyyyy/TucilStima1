@@ -6,7 +6,7 @@ public class Matcher {
         if (j + 1 - keyword.length < 0){ 
             flag = false;
         } else {
-            int count = 0;
+            int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
                 // System.out.println(m.buffer[i][j - count] + " " + keyword[count]);
@@ -41,7 +41,7 @@ public class Matcher {
         if (j + keyword.length > m.cols){ 
             flag = false;
         } else {
-            int count = 0;
+            int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
                 // System.out.println(m.buffer[i][j + count] + " " + keyword[count]);
@@ -78,7 +78,7 @@ public class Matcher {
         if (i - keyword.length + 1 < 0){ 
             flag = false;
         } else {
-            int count = 0;
+            int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
                 // System.out.println(m.buffer[i - count][j] + " " + keyword[count]);
@@ -113,7 +113,7 @@ public class Matcher {
         if (i + keyword.length > m.rows){ 
             flag = false;
         } else {
-            int count = 0;
+            int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
                 // System.out.println(m.buffer[i + count][j] + " " + keyword[count]);
@@ -148,7 +148,7 @@ public class Matcher {
         if (j + 1 - keyword.length < 0 || i - keyword.length + 1 < 0){ 
             flag = false;
         } else {
-            int count = 0;
+            int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
                 // System.out.println(m.buffer[i - count][j - count] + " " + keyword[count]);
@@ -182,7 +182,7 @@ public class Matcher {
         if (j + 1 - keyword.length < 0 || i + keyword.length > m.rows){ 
             flag = false;
         } else {
-            int count = 0;
+            int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
                 // System.out.println(m.buffer[i + count][j - count] + " " + keyword[count]);
@@ -217,7 +217,7 @@ public class Matcher {
         if (j + keyword.length > m.cols || i - keyword.length + 1 < 0){ 
             flag = false;
         } else {
-            int count = 0;
+            int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
                 // System.out.println(m.buffer[i - count][j + count] + " " + keyword[count]);
@@ -253,7 +253,7 @@ public class Matcher {
         if (j + keyword.length > m.cols || i + keyword.length > m.rows){ 
             flag = false;
         } else {
-            int count = 0;
+            int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
                 // System.out.println(m.buffer[i + count][j + count] + " " + keyword[count]);
