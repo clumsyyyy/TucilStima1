@@ -13,19 +13,22 @@ public class MainProgram {
         ReadFile.readText(m, keywords, sc);
 
         System.out.println("Read puzzle from the file: ");
-        m.printMatrix();
+        m.printOriMatrix();
         System.out.println("Size: " + m.rows + " x " + m.cols);
         System.out.println("\nThere are " + keywords.size() +" read keywords from the file: ");
         for(int i = 0; i < keywords.size(); i++){
             System.out.println("- " + keywords.get(i));
         }
         System.out.println();
+
         for(int i = 0; i < keywords.size(); i++){
             duration += SearchWord.search(m, keywords.get(i));
         }
 
+        m.printColorMatrix();
+
         System.out.println("Comparison time in total (parsing excluded): " + duration + " ms.");
-        // System.out.println("Press any key to quit...");
-        // String space = sc.nextLine();
+        System.out.println("Press any key to quit...");
+        sc.nextLine();
     }
 }

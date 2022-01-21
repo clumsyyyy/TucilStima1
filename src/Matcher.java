@@ -9,8 +9,8 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i][j - count] + " " + keyword[count]);
-                if (!m.buffer[i][j - count].equals(keyword[count])){
+                // System.out.println(m.buffer[i][j - count].oriChar + " " + keyword[count]);
+                if (!m.buffer[i][j - count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
                     count++;
@@ -18,18 +18,13 @@ public class Matcher {
             }
         }
         if(flag){
-            Matrix temp = new Matrix(m.rows, m.cols);
-            temp.blankMatrix();
             int a = 0;
             while (a < keyword.length){
-                temp.buffer[i][j - a] = m.buffer[i][j - a];
+                m.buffer[i][j - a].colorChar = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i][j - a].oriChar + "\u001B[0m";
                 a++;
             }
-            tempExec = new Exec(temp, compCount, flag);
-        } else {
-            tempExec = new Exec(new Matrix(0, 0), compCount, flag);
         }
-
+        tempExec = new Exec(compCount, flag);
         return tempExec;
     }
 
@@ -44,8 +39,8 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i][j + count] + " " + keyword[count]);
-                if (!m.buffer[i][j + count].equals(keyword[count])){
+                // System.out.println(m.buffer[i][j + count].oriChar + " " + keyword[count]);
+                if (!m.buffer[i][j + count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
                     count++;
@@ -54,18 +49,13 @@ public class Matcher {
         }
 
         if(flag){
-            Matrix temp = new Matrix(m.rows, m.cols);
-            temp.blankMatrix();
             int a = 0;
             while (a < keyword.length){
-                temp.buffer[i][j + a] = m.buffer[i][j + a];
+                m.buffer[i][j + a].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i][j + a].oriChar + "\u001B[0m";
                 a++;
             }
-            tempExec = new Exec(temp, compCount, flag);
-        } else {
-            tempExec = new Exec(new Matrix(0, 0), compCount, flag);
         }
-
+        tempExec = new Exec(compCount, flag);
         return tempExec;
     }   
 
@@ -74,15 +64,15 @@ public class Matcher {
         int compCount = 0;
         Exec tempExec;
 
-        long tempTime = System.currentTimeMillis();
+
         if (i - keyword.length + 1 < 0){ 
             flag = false;
         } else {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i - count][j] + " " + keyword[count]);
-                if (!m.buffer[i - count][j].equals(keyword[count])){
+                // System.out.println(m.buffer[i - count][j].oriChar + " " + keyword[count]);
+                if (!m.buffer[i - count][j].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
                     count++; 
@@ -90,19 +80,14 @@ public class Matcher {
             }
         }
         if(flag){
-            System.out.println(System.currentTimeMillis() - tempTime);
-            Matrix temp = new Matrix(m.rows, m.cols);
-            temp.blankMatrix();
+
             int a = 0;
             while (a < keyword.length){
-                temp.buffer[i - a][j] = m.buffer[i - a][j];
+                m.buffer[i - a][j].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i - a][j].oriChar + "\u001B[0m";
                 a++;
             }
-            tempExec = new Exec(temp, compCount, flag);
-        } else {
-            tempExec = new Exec(new Matrix(0, 0), compCount, flag);
         }
-
+        tempExec = new Exec(compCount, flag);
         return tempExec;
     }
 
@@ -116,8 +101,8 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i + count][j] + " " + keyword[count]);
-                if (!m.buffer[i + count][j].equals(keyword[count])){
+                // System.out.println(m.buffer[i + count][j].oriChar + " " + keyword[count]);
+                if (!m.buffer[i + count][j].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
                     count++;
@@ -125,18 +110,13 @@ public class Matcher {
             }
         }
         if(flag){
-            Matrix temp = new Matrix(m.rows, m.cols);
-            temp.blankMatrix();
             int a = 0;
             while (a < keyword.length){
-                temp.buffer[i + a][j] = m.buffer[i + a][j];
+                m.buffer[i + a][j].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i + a][j].oriChar + "\u001B[0m";
                 a++;
             }
-            tempExec = new Exec(temp, compCount, flag);
-        } else {
-            tempExec = new Exec(new Matrix(0, 0), compCount, flag);
         }
-
+        tempExec = new Exec(compCount, flag);
         return tempExec;
     }
 
@@ -151,8 +131,8 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i - count][j - count] + " " + keyword[count]);
-                if (!m.buffer[i - count][j - count].equals(keyword[count])){
+                // System.out.println(m.buffer[i - count][j - count].oriChar + " " + keyword[count]);
+                if (!m.buffer[i - count][j - count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
                     count++;
@@ -160,17 +140,13 @@ public class Matcher {
             }
         }
         if(flag){
-            Matrix temp = new Matrix(m.rows, m.cols);
-            temp.blankMatrix();
             int a = 0;
             while (a < keyword.length){
-                temp.buffer[i - a][j - a] = m.buffer[i - a][j - a];
+                m.buffer[i - a][j - a].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i - a][j - a].oriChar + "\u001B[0m";
                 a++;
             }
-            tempExec = new Exec(temp, compCount, flag);
-        } else {
-            tempExec = new Exec(new Matrix(0, 0), compCount, flag);
         }
+        tempExec = new Exec(compCount, flag);
         return tempExec;
     }
 
@@ -185,8 +161,8 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i + count][j - count] + " " + keyword[count]);
-                if (!m.buffer[i + count][j - count].equals(keyword[count])){
+                // System.out.println(m.buffer[i + count][j - count].oriChar + " " + keyword[count]);
+                if (!m.buffer[i + count][j - count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
                     count++;
@@ -194,18 +170,13 @@ public class Matcher {
             }
         }
         if(flag){
-            Matrix temp = new Matrix(m.rows, m.cols);
-            temp.blankMatrix();
             int a = 0;
             while (a < keyword.length){
-                temp.buffer[i + a][j - a] = m.buffer[i + a][j - a];
+                m.buffer[i + a][j - a].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i + a][j - a].oriChar + "\u001B[0m";
                 a++;
             }
-            tempExec = new Exec(temp, compCount, flag);
-        } else {
-            tempExec = new Exec(new Matrix(0, 0), compCount, flag);
         }
-
+        tempExec = new Exec(compCount, flag);
         return tempExec;
     }
 
@@ -219,9 +190,9 @@ public class Matcher {
         } else {
             int count = 1;
             while (count < keyword.length && flag){
-                compCount++;
-                // System.out.println(m.buffer[i - count][j + count] + " " + keyword[count]);
-                if (!m.buffer[i - count][j + count].equals(keyword[count])){
+                compCount++; 
+                // System.out.println(m.buffer[i - count][j + count].oriChar + " " + keyword[count]);
+                if (!m.buffer[i - count][j + count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
                     count++;
@@ -230,18 +201,13 @@ public class Matcher {
             }
         }
         if(flag){
-            Matrix temp = new Matrix(m.rows, m.cols);
-            temp.blankMatrix();
             int a = 0;
             while (a < keyword.length){
-                temp.buffer[i - a][j + a] = m.buffer[i - a][j + a];
+                m.buffer[i - a][j + a].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i - a][j + a].oriChar + "\u001B[0m";
                 a++;
             }
-            tempExec = new Exec(temp, compCount, flag);
-        } else {
-            tempExec = new Exec(new Matrix(0, 0), compCount, flag);
         }
-
+        tempExec = new Exec(compCount, flag);
         return tempExec;
     }
 
@@ -256,8 +222,8 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i + count][j + count] + " " + keyword[count]);
-                if (!m.buffer[i + count][j + count].equals(keyword[count])){
+                // System.out.println(m.buffer[i + count][j + count].oriChar + " " + keyword[count]);
+                if (!m.buffer[i + count][j + count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
                     count++;
@@ -266,18 +232,13 @@ public class Matcher {
             }
         }
         if(flag){
-            Matrix temp = new Matrix(m.rows, m.cols);
-            temp.blankMatrix();
             int a = 0;
             while (a < keyword.length){
-                temp.buffer[i + a][j + a] = m.buffer[i + a][j + a];
+                m.buffer[i + a][j + a].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i + a][j + a].oriChar + "\u001B[0m";
                 a++;
             }
-            tempExec = new Exec(temp, compCount, flag);
-        } else {
-            tempExec = new Exec(new Matrix(0, 0), compCount, flag);
         }
-
+        tempExec = new Exec(compCount, flag);
         return tempExec;
     }
 }

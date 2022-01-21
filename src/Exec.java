@@ -1,10 +1,8 @@
 public class Exec {
     int count;
     boolean flag;
-    Matrix m;
     
-    public Exec(Matrix m, int compCount, boolean flag){
-        this.m = m;
+    public Exec(int compCount, boolean flag){
         this.count = compCount;
         this.flag = flag;
     }
