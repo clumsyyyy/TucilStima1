@@ -8,20 +8,19 @@ public class ReadFile{
 
         String filename = "";
 
-        System.out.print("Input your filename (with .txt): ");
+        System.out.print("Input your filename (without .txt): ");
         filename = sc.nextLine();
         while (filename == ""){
-            System.out.print("Input your filename (with .txt): ");
+            System.out.print("Input your filename (without .txt): ");
             filename = sc.nextLine();
         }
         try{
-            File text = new File("test/" + filename);
+            File text = new File("../test/" + filename + ".txt");
             Scanner sizeReader = new Scanner(text);
             int rowSize = 1;
 
             while (sizeReader.hasNextLine() && !sizeReader.nextLine().equals("")){
                 rowSize++;
-                
             }
             
             sizeReader.close();
@@ -34,7 +33,7 @@ public class ReadFile{
                     String rows[] = line.split(" ");
                     m.cols = rows.length;
                     for(int j = 0; j < m.cols; j++){
-                        m.buffer[i][j] = rows[j];
+                        m.buffer[i][j] = new CharObj(rows[j]);
                     }
 
                 }
