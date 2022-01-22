@@ -32,6 +32,30 @@ ada _keyword_ yang ditemukan. Di akhir program, matriks berupa _puzzle_ dengan p
 
 ## Penggunaan
 
+### Melalui Terminal _Visual Studio Code_
+1. Pastikan sedang berada di folder `root`
+2. Navigasi ke folder `src` dengan perintah `cd src`
+3. Ketikkan perintah berikut: 
+```
+javac -d ../bin ./*.java
+```
+Perintah ini akan mengkompilasi file `.class` di folder `src` ke dalam folder `bin`.
+4. Nvigasi ke folder `bin` dengan perintah:
+```
+cd ..
+cd bin
+```
+5. Jalankan perintah `java MainProgram` untuk menjalankan program.
+### Melalui _Batch File_
+
+[**IMPORTANT**] Metode ini akan melakukan kompilasi secara otomatis, namun untuk dapat melihat pewarnaan, pengguna harus
+mengubah nilai variabel di Registry Editor. Untuk melakukannya:
+1. Buka Registry Editor (dapat melalui _search bar_ atau _shortcut_ `Win + R` dan mengisikan `regedit`)
+2. Navigasikan ke folder `HKEY_CURRENT_USER/CONSOLE`. Klik kanan di area putih, pilih `New > DWORD (32-bit value)`
+3. Pada dialog pembuatan, isikan nama variabel dengan `VirtualTerminalLevel`. Setelah dibuat, variabel akan terinisialisasi di layar.
+4. Klik `VirtualTerminalLevel` dan pilih opsi `Modify`. Ubah isian _value data_ menjadi 1.
+
+Setelah itu, lakukan langkah-langkah berikut untuk menjalankan program:
 1. Pastikan sedang berada di folder `root`
 2. Apabila ingin menambahkan _test case_, tambahkan di folder `test`
 3. Jalankan `run.bat`. _Batch file_ akan mengkompilasi file `.class` di folder `src` dan mengalokasikan _executables_ ke folder `bin`
