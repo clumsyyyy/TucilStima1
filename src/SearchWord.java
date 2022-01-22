@@ -1,5 +1,5 @@
 public class SearchWord {
-    public static long search(Matrix m, String keyword){
+    public static long[] search(Matrix m, String keyword){
         String[] keyArr = keyword.split("");
         String first = keyArr[0];
         boolean found = false;
@@ -40,7 +40,6 @@ public class SearchWord {
                     if (!found){
                         count += temp.count;
                         if (temp.flag){
-                            
                             time = System.nanoTime() - tempStart;
                             System.out.println("Keyword \'" + keyword + "\' FOUND VERTICAL LOWER");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
@@ -111,10 +110,11 @@ public class SearchWord {
         }
         if (!found){
             time = System.nanoTime() - tempStart;
-            System.out.println("Keyword \'" + keyword + "\'  not found...");
+            System.out.println("Keyword \'" + keyword + "\' not found...");
             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
         }
-        System.out.println();
-        return time;
+        System.out.println(); 
+        long[] arr = {time, Long.valueOf(count)};
+        return arr;
     }
 }
