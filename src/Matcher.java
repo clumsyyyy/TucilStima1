@@ -20,7 +20,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i][j - a].colorChar = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i][j - a].oriChar + "\u001B[0m";
+                m.buffer[i][j - a].colorChar =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 1) % 227) + "m" + m.buffer[i][j - a].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -51,7 +51,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i][j + a].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i][j + a].oriChar + "\u001B[0m";
+                m.buffer[i][j + a].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 1) % 227) + "m" + m.buffer[i][j + a].colorChar + "\u001B[0m";
                 a++;
             }
         }
@@ -83,7 +83,7 @@ public class Matcher {
 
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i - a][j].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i - a][j].oriChar + "\u001B[0m";
+                m.buffer[i - a][j].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 1) % 227) + "m" + m.buffer[i - a][j].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -112,7 +112,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i + a][j].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i + a][j].oriChar + "\u001B[0m";
+                m.buffer[i + a][j].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 1) % 227) + "m" + m.buffer[i + a][j].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -142,7 +142,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i - a][j - a].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i - a][j - a].oriChar + "\u001B[0m";
+                m.buffer[i - a][j - a].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 1) % 227) + "m" + m.buffer[i - a][j - a].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -161,7 +161,6 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i + count][j - count].oriChar + " " + keyword[count]);
                 if (!m.buffer[i + count][j - count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
@@ -172,7 +171,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i + a][j - a].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i + a][j - a].oriChar + "\u001B[0m";
+                m.buffer[i + a][j - a].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 1) % 227) + "m" + m.buffer[i + a][j - a].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -203,7 +202,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i - a][j + a].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i - a][j + a].oriChar + "\u001B[0m";
+                m.buffer[i - a][j + a].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 1) % 227) + "m" + m.buffer[i - a][j + a].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -234,7 +233,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i + a][j + a].colorChar  = "\u001B[1m\u001B[3" + ((keyword.length + i + j + 1) % 6) + "m" + m.buffer[i + a][j + a].oriChar + "\u001B[0m";
+                m.buffer[i + a][j + a].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 1) % 227) + "m" + m.buffer[i + a][j + a].oriChar + "\u001B[0m";
                 a++;
             }
         }

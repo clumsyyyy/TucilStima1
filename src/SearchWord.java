@@ -1,5 +1,5 @@
 public class SearchWord {
-    public static long search(Matrix m, String keyword){
+    public static long[] search(Matrix m, String keyword){
         String[] keyArr = keyword.split("");
         String first = keyArr[0];
         boolean found = false;
@@ -7,7 +7,7 @@ public class SearchWord {
         int j = 0;
         int count = 0;
         long time = 0;
-        long tempStart = System.nanoTime();
+        long tempStart = System. currentTimeMillis();
         
 
         while (i < m.rows && !found){
@@ -18,7 +18,7 @@ public class SearchWord {
                     if (!found){
                         count += temp.count;
                         if (temp.flag){
-                            time = System.nanoTime() - tempStart;
+                            time = System. currentTimeMillis() - tempStart;
                             System.out.println("Keyword \'" + keyword + "\' FOUND HORIZONTAL LEFT");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
                             found = true;
@@ -29,7 +29,7 @@ public class SearchWord {
                     if (!found){
                         count += temp.count;
                         if (temp.flag){
-                            time = System.nanoTime() - tempStart;
+                            time = System. currentTimeMillis() - tempStart;
                             System.out.println("Keyword \'" + keyword + "\' FOUND HORIZONTAL RIGHT");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
                             found = true;
@@ -40,8 +40,7 @@ public class SearchWord {
                     if (!found){
                         count += temp.count;
                         if (temp.flag){
-                            
-                            time = System.nanoTime() - tempStart;
+                            time = System. currentTimeMillis() - tempStart;
                             System.out.println("Keyword \'" + keyword + "\' FOUND VERTICAL LOWER");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
                             found = true;
@@ -52,7 +51,7 @@ public class SearchWord {
                     if (!found){
                         count += temp.count;
                         if (temp.flag ){
-                            time = System.nanoTime() - tempStart;
+                            time = System. currentTimeMillis() - tempStart;
                             System.out.println("Keyword \'" + keyword + "\' FOUND VERTICAL UPPER");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
                             found = true;
@@ -63,7 +62,7 @@ public class SearchWord {
                     if (!found){
                         count += temp.count;
                         if (temp.flag){
-                            time = System.nanoTime() - tempStart;
+                            time = System. currentTimeMillis() - tempStart;
                             System.out.println("Keyword \'" + keyword + "\' FOUND DIAGONALLY LEFT UPPER");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
                             found = true;
@@ -75,7 +74,7 @@ public class SearchWord {
                     if (!found){
                         count += temp.count;
                         if (temp.flag){
-                            time = System.nanoTime() - tempStart;
+                            time = System. currentTimeMillis() - tempStart;
                             System.out.println("Keyword \'" + keyword + "\' FOUND DIAGONALLY LEFT LOWER");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
                             found = true;
@@ -86,7 +85,7 @@ public class SearchWord {
                     if (!found){
                         count += temp.count;
                         if (temp.flag){
-                            time = System.nanoTime() - tempStart;
+                            time = System. currentTimeMillis() - tempStart;
                             System.out.println("Keyword \'" + keyword + "\' FOUND DIAGONALLY RIGHT LOWER");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
                             found = true;
@@ -97,7 +96,7 @@ public class SearchWord {
                     if (!found){
                         count += temp.count;
                         if (temp.flag && !found){
-                            time = System.nanoTime() - tempStart;
+                            time = System. currentTimeMillis() - tempStart;
                             System.out.println("Keyword \'" + keyword + "\' FOUND DIAGONALLY RIGHT UPPER");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
                             found = true;
@@ -110,11 +109,12 @@ public class SearchWord {
             i = i + 1;
         }
         if (!found){
-            time = System.nanoTime() - tempStart;
-            System.out.println("Keyword \'" + keyword + "\'  not found...");
+            time = System. currentTimeMillis() - tempStart;
+            System.out.println("Keyword \'" + keyword + "\' not found...");
             System.out.println("Comparison: " + count + " time(s) | " + time + " ms");
         }
-        System.out.println();
-        return time;
+        System.out.println(); 
+        long[] arr = {time, Long.valueOf(count)};
+        return arr;
     }
 }

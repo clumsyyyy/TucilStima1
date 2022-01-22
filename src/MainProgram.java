@@ -4,7 +4,7 @@ import java.util.ArrayList;
 public class MainProgram {
     public static void main(String[] args){
         long duration = 0;
-
+        long count = 0;
         Matrix m = new Matrix(100, 100);
         ArrayList<String> keywords = new ArrayList<String>();
         Scanner sc = new Scanner(System.in);
@@ -22,12 +22,15 @@ public class MainProgram {
         System.out.println();
 
         for(int i = 0; i < keywords.size(); i++){
-            duration += SearchWord.search(m, keywords.get(i));
+            long[] results = SearchWord.search(m, keywords.get(i));
+            duration += results[0];
+            count += results[1];
         }
 
         m.printColorMatrix();
-
+        System.out.println();
         System.out.println("Comparison time in total (parsing excluded): " + duration + " ms.");
+        System.out.println("Comparison count in total: " + count + " time(s)");
         System.out.println("Press any key to quit...");
         sc.nextLine();
     }
