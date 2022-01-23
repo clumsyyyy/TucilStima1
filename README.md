@@ -62,6 +62,6 @@ Setelah itu, lakukan langkah-langkah berikut untuk menjalankan program:
 4. Setelah program terbuka, masukkan nama file **tanpa ekstensi .txt** (mis. nama file: `case.txt`, input: `case`)
 5. Program akan melakukan pengecekan, dan memberikan output berupa _puzzle_ dan informasi eksekusi :D
 
-##Identitas
+## Identitas
 NIM: 13520124
 Nama: Owen Christian Wijaya
