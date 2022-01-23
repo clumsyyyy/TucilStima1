@@ -8,18 +8,25 @@ public class MainProgram {
         Matrix m = new Matrix(100, 100);
         ArrayList<String> keywords = new ArrayList<String>();
         Scanner sc = new Scanner(System.in);
-        
-        System.out.println("Welcome to the solver!");
+        System.out.println(" ____  _     ____  ____  _____ ____  ____  ____  _    ");
+        System.out.println("/  __\\/ \\ /\\/_   \\/_   \\/  __//  _ \\/  __\\/   _\\/ \\ /|");
+        System.out.println("|  \\/|| | || /   / /   /|  \\  | / \\||  \\/||  /  | |_||");
+        System.out.println("|  __/| \\_/|/   /_/   /_|  /_ | |-|||    /|  \\_ | | ||");
+        System.out.println("\\_/   \\____/\\____/\\____/\\____\\\\_/ \\|\\_/\\_\\\\____/\\_/ \\|");
+        System.out.println();
+
+        System.out.println("Welcome to the Puzzearch solver!");
         ReadFile.readText(m, keywords, sc);
 
-        System.out.println("Read puzzle from the file: ");
+        System.out.println("Read puzzle from the file: (Size: " + m.rows + " x " + m.cols + ")");
         m.printOriMatrix();
-        System.out.println("Size: " + m.rows + " x " + m.cols);
         System.out.println("\nThere are " + keywords.size() +" read keywords from the file: ");
         for(int i = 0; i < keywords.size(); i++){
             System.out.println("- " + keywords.get(i));
         }
-        System.out.println();
+
+        System.out.println("Press any key to start searching!");
+        sc.nextLine();
 
         for(int i = 0; i < keywords.size(); i++){
             long[] results = SearchWord.search(m, keywords.get(i));

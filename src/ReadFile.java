@@ -15,7 +15,7 @@ public class ReadFile{
             filename = sc.nextLine();
         }
         try{
-            File text = new File("test/" + filename + ".txt");
+            File text = new File("../test/" + filename + ".txt");
             Scanner sizeReader = new Scanner(text);
             int rowSize = 1;
 
