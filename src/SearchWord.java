@@ -13,6 +13,7 @@ public class SearchWord {
             while (j < m.cols && !found){
                 count++;
                 if (first.equals(m.buffer[i][j].oriChar)){
+                    //System.out.println("coords "+ i + " " + j);
                     Exec temp = Matcher.checkHL(m, keyArr, i, j);
                     if (!found){
                         count += temp.count;
