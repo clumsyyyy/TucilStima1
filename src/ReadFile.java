@@ -15,7 +15,7 @@ public class ReadFile{
             filename = sc.nextLine();
         }
         try{
-            File text = new File("../test/" + filename + ".txt");
+            File text = new File("test/" + filename + ".txt");
             Scanner sizeReader = new Scanner(text);
             int rowSize = 1;
 
@@ -25,17 +25,25 @@ public class ReadFile{
             
             sizeReader.close();
             m.rows = rowSize - 1;
+            
             Scanner lineReader = new Scanner(text);
-
+            m.cols = 0;
             try{
                 for(int i = 0; i < m.rows; i++){
                     String line = lineReader.nextLine();
                     String rows[] = line.split(" ");
-                    m.cols = rows.length;
-                    for(int j = 0; j < m.cols; j++){
+                    if (m.cols < rows.length){
+                        m.cols = rows.length;
+                    }
+                    for(int j = 0; j < rows.length; j++){
                         m.buffer[i][j] = new CharObj(rows[j]);
                     }
 
+                    if (rows.length < m.cols){
+                        for(int j = rows.length + 1; j  < m.cols; j++){
+                            m.buffer[i][j] = new CharObj(" ");
+                        }
+                    }
                 }
                 lineReader.nextLine();
                 while(lineReader.hasNextLine()){

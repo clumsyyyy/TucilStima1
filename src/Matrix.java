@@ -7,6 +7,11 @@ public class Matrix {
         this.rows = row;
         this.cols = col;
         this.buffer = new CharObj[row][col];
+        for(int i = 0; i < this.rows; i++){
+            for(int j = 0; j < this.cols; j++){
+                this.buffer[i][j] = new CharObj(" ");
+            }
+        }
     }
 
     public void printOriMatrix(){
