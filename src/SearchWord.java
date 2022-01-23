@@ -8,12 +8,10 @@ public class SearchWord {
         int count = 0;
         long time = 0;
         long tempStart = System.nanoTime();
-        //(double)((Math.round(time / 10e5) * 100.0) / 100.0)
         while (i < m.rows && !found){
             while (j < m.cols && !found){
                 count++;
                 if (first.equals(m.buffer[i][j].oriChar)){
-                    //System.out.println("coords "+ i + " " + j);
                     Exec temp = Matcher.checkHL(m, keyArr, i, j);
                     if (!found){
                         count += temp.count;
