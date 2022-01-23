@@ -10,7 +10,8 @@ public class ReadFile{
 
         System.out.print("Input your filename (without .txt): ");
         filename = sc.nextLine();
-        while (filename == ""){
+        while (filename == "" || !(new File("../test/" + filename + ".txt").exists())){
+            System.out.println("Sorry, file name doesn't exist or it has not been put in the /test folder!");
             System.out.print("Input your filename (without .txt): ");
             filename = sc.nextLine();
         }
