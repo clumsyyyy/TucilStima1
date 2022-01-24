@@ -3,7 +3,7 @@ public class CharObj{
     String colorChar;
 
     public CharObj(String character){
-        this.oriChar = character;
-        this.colorChar = character;
+        this.oriChar = character.trim();
+        this.colorChar = character.trim();
     }
 }
