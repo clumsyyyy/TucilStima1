@@ -1,5 +1,5 @@
 public class Matcher {
-    public static Exec checkHL(Matrix m, String[] keyword, int i, int j){ //horizontal left, ex URANUS
+    public static Exec checkHL(Matrix m, String[] keyword, int i, int j){ //horizontal left
         boolean flag = true;
         int compCount = 0;
         Exec tempExec;
@@ -9,7 +9,6 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i][j - count].oriChar + " " + keyword[count]);
                 if (!m.buffer[i][j - count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
@@ -20,7 +19,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i][j - a].colorChar =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 19) % 227) + "m" + m.buffer[i][j - a].oriChar + "\u001B[0m";
+                m.buffer[i][j - a].colorChar =  "\u001B[1m\u001B[38;5;" + (((keyword.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m" + m.buffer[i][j - a].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -28,7 +27,7 @@ public class Matcher {
         return tempExec;
     }
 
-    public static Exec checkHR(Matrix m, String[] keyword, int i, int j){ //horizontal right, ex NEPTUNE
+    public static Exec checkHR(Matrix m, String[] keyword, int i, int j){ //horizontal right
         boolean flag = true;
         int compCount = 0;
         Exec tempExec;
@@ -38,9 +37,7 @@ public class Matcher {
         } else {
             int count = 1;
             while (count < keyword.length && flag){
-                compCount++;
-                // System.out.println(m.buffer[i][j + count].oriChar + " " + keyword[count]);
-                if (!m.buffer[i][j + count].oriChar.equals(keyword[count])){
+                compCount++;                if (!m.buffer[i][j + count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
                     count++;
@@ -51,7 +48,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i][j + a].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 19) % 227) + "m" + m.buffer[i][j + a].colorChar + "\u001B[0m";
+                m.buffer[i][j + a].colorChar  =  "\u001B[1m\u001B[38;5;" + (((keyword.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m" + m.buffer[i][j + a].colorChar + "\u001B[0m";
                 a++;
             }
         }
@@ -59,7 +56,7 @@ public class Matcher {
         return tempExec;
     }   
 
-    public static Exec checkVU(Matrix m, String[] keyword, int i, int j){ //vertical upper, ex VITAL
+    public static Exec checkVU(Matrix m, String[] keyword, int i, int j){ //vertical upper
         boolean flag = true;
         int compCount = 0;
         Exec tempExec;
@@ -71,7 +68,6 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i - count][j].oriChar + " " + keyword[count]);
                 if (!m.buffer[i - count][j].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
@@ -83,7 +79,7 @@ public class Matcher {
 
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i - a][j].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 19) % 227) + "m" + m.buffer[i - a][j].oriChar + "\u001B[0m";
+                m.buffer[i - a][j].colorChar  =  "\u001B[1m\u001B[38;5;" + (((keyword.length + (16* i)  + (16*j) + 19) % 185) + 20) + "m" + m.buffer[i - a][j].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -91,7 +87,7 @@ public class Matcher {
         return tempExec;
     }
 
-    public static Exec checkVL(Matrix m, String[] keyword, int i, int j){ //vertical lower, ex SATURN
+    public static Exec checkVL(Matrix m, String[] keyword, int i, int j){ 
         boolean flag = true;
         int compCount = 0;
         Exec tempExec;
@@ -101,7 +97,6 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i + count][j].oriChar + " " + keyword[count]);
                 if (!m.buffer[i + count][j].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
@@ -112,7 +107,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i + a][j].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 19) % 227) + "m" + m.buffer[i + a][j].oriChar + "\u001B[0m";
+                m.buffer[i + a][j].colorChar  =  "\u001B[1m\u001B[38;5;" + (((keyword.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m" + m.buffer[i + a][j].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -131,7 +126,6 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i - count][j - count].oriChar + " " + keyword[count]);
                 if (!m.buffer[i - count][j - count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
@@ -142,7 +136,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i - a][j - a].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 19) % 227) + "m" + m.buffer[i - a][j - a].oriChar + "\u001B[0m";
+                m.buffer[i - a][j - a].colorChar  =  "\u001B[1m\u001B[38;5;" + (((keyword.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m" + m.buffer[i - a][j - a].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -171,7 +165,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i + a][j - a].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 19) % 227) + "m" + m.buffer[i + a][j - a].oriChar + "\u001B[0m";
+                m.buffer[i + a][j - a].colorChar  =  "\u001B[1m\u001B[38;5;" + (((keyword.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m" + m.buffer[i + a][j - a].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -190,7 +184,6 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++; 
-                // System.out.println(m.buffer[i - count][j + count].oriChar + " " + keyword[count]);
                 if (!m.buffer[i - count][j + count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
@@ -202,7 +195,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i - a][j + a].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 19) % 227) + "m" + m.buffer[i - a][j + a].oriChar + "\u001B[0m";
+                m.buffer[i - a][j + a].colorChar  =  "\u001B[1m\u001B[38;5;" + (((keyword.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m" + m.buffer[i - a][j + a].oriChar + "\u001B[0m";
                 a++;
             }
         }
@@ -210,7 +203,7 @@ public class Matcher {
         return tempExec;
     }
 
-    public static Exec checkDRL(Matrix m, String[] keyword, int i, int j){ //diagonal right lower, ex JUPITER
+    public static Exec checkDRL(Matrix m, String[] keyword, int i, int j){ //diagonal right lower
         boolean flag = true;
         int compCount = 0;
         Exec tempExec;
@@ -221,7 +214,6 @@ public class Matcher {
             int count = 1;
             while (count < keyword.length && flag){
                 compCount++;
-                // System.out.println(m.buffer[i + count][j + count].oriChar + " " + keyword[count]);
                 if (!m.buffer[i + count][j + count].oriChar.equals(keyword[count])){
                     flag = false;
                 } else {
@@ -233,7 +225,7 @@ public class Matcher {
         if(flag){
             int a = 0;
             while (a < keyword.length){
-                m.buffer[i + a][j + a].colorChar  =  "\u001B[1m\u001B[38;5;" + ((keyword.length + (16 *  i)  + (16 * j) + 19) % 227) + "m" + m.buffer[i + a][j + a].oriChar + "\u001B[0m";
+                m.buffer[i + a][j + a].colorChar  =  "\u001B[1m\u001B[38;5;" + (((keyword.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m" + m.buffer[i + a][j + a].oriChar + "\u001B[0m";
                 a++;
             }
         }
