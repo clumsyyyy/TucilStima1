@@ -1,8 +1,8 @@
 S B R E N S B E V E L I E S D F A S D F
 D C K F B H F N T Y I G T P O A B K Z Z
-B E W F F D M W E R Q A O Z H P Q H G O
-G C Y L W O L X L E H P J C V N K Z L S
-G Y L E Y G T D Y L U X L U S O Q R K G
+B E O F F D M W E R Q A O Z H P Q H G O
+G C Y M W O L X L E H P J C V N K Z L S
+G Y L E P G T D Y L U X L U S O Q R K G
 D G U Q N R D L Z L B F L G P P I J G I
 V U E S A K P L A E A V H U M M U L S A
 T K M D A I C R A W B A H V L G G T I B
@@ -14,16 +14,17 @@ I D T H S O X S P D J F C G Q O G Y L S
 Q I H X M T L L T H N Z N L F U O H I E
 B G S U J L Z L Y I J U N O X I O U S L
 D N A E T B J A A X E Y T E Q K P Y H Q
-S J B Z I E O U M O N X A R R M K D E R
-X F U K A M H G N G K E J I I F I Z R B
-S I F N F M F Y M A O W H K A E L U W K
-K K I L O O F B Z J X D X A W V N R W H
-S H N X H N U N Y W T J I U W Z J T P N
-A S E H D S X A W Q G E Y M F D S A P M
+S J B Z I C O U M O N X A R R M K D E R
+X F U K O M H G N G K E J I I F I Z R B
+S I F M F M F Y M A O W H K A E L U W K
+K K P L O O F B Z J X D X A W V N R W H
+S L N X H N U N Y W T J I U W Z J T P N
+Y S E H D S X A W Q G E Y M F D S A P M
 
 ALLOTMENT
 BASH
 BITTY
+COMPLY
 DUMBNESS
 EMPTY
 EXTRADITE
