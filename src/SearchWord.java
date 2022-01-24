@@ -8,16 +8,40 @@ public class SearchWord {
         int count = 0;
         long time = 0;
         long tempStart = System.nanoTime();
+
         while (i < m.rows && !found){
             while (j < m.cols && !found){
                 count++;
                 if (first.equals(m.buffer[i][j].oriChar)){
-                    Exec temp = Matcher.checkHL(m, keyArr, i, j);
+                    Exec temp = Matcher.checkHR(m, keyArr, i, j);
+
                     if (!found){
                         count += temp.count;
                         if (temp.flag && index != -1){
                             time = System.nanoTime() - tempStart;
-                            System.out.println("Keyword \'" + keyword + "\' found horizontally left!");
+                            System.out.println("Keyword \'" + "\u001B[1m\u001B[38;5;" + (((keyArr.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m"  + keyword + "\u001B[0m\' found horizontally right!");
+                            System.out.println("Comparison: " + count + " time(s) | " + time + " ns (" + String.format("%.3f", (double)(time / 10e5)) + " ms)");
+                            found = true;
+                        }
+                    }
+
+                    temp = Matcher.checkDRL(m, keyArr, i, j);
+                    if (!found){
+                        count += temp.count;
+                        if (temp.flag && index != -1){
+                            time = System.nanoTime() - tempStart;
+                            System.out.println("Keyword \'" + "\u001B[1m\u001B[38;5;" + (((keyArr.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m"  + keyword + "\u001B[0m\' found diagonally! (right lower)");
+                            System.out.println("Comparison: " + count + " time(s) | " + time + " ns (" + String.format("%.3f", (double)(time / 10e5)) + " ms)");
+                            found = true;
+                        } 
+                    }
+
+                    temp = Matcher.checkVL(m, keyArr, i, j);
+                    if (!found){
+                        count += temp.count;
+                        if (temp.flag && index != -1){
+                            time = System.nanoTime() - tempStart;
+                              System.out.println("Keyword \'" + "\u001B[1m\u001B[38;5;" + (((keyArr.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m"  + keyword + "\u001B[0m\' found vertically lower!");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ns (" + String.format("%.3f", (double)(time / 10e5)) + " ms)");
                             found = true;
                         }
@@ -28,43 +52,44 @@ public class SearchWord {
                         count += temp.count;
                         if (temp.flag && index != -1){
                             time = System.nanoTime() - tempStart;
-                            System.out.println("Keyword \'" + keyword + "\' found diagonally! (left lower)");
+                              System.out.println("Keyword \'" + "\u001B[1m\u001B[38;5;" + (((keyArr.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m"  + keyword + "\u001B[0m\' found diagonally! (left lower)");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ns (" + String.format("%.3f", (double)(time / 10e5)) + " ms)");
                             found = true;
                         }
                     }
 
-                    temp = Matcher.checkVL(m, keyArr, i, j);
+                    temp = Matcher.checkHL(m, keyArr, i, j);
                     if (!found){
                         count += temp.count;
                         if (temp.flag && index != -1){
                             time = System.nanoTime() - tempStart;
-                            System.out.println("Keyword \'" + keyword + "\' found vertically lower!");
+                              System.out.println("Keyword \'" + "\u001B[1m\u001B[38;5;" + (((keyArr.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m"  + keyword + "\u001B[0m\' found horizontally left!");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ns (" + String.format("%.3f", (double)(time / 10e5)) + " ms)");
                             found = true;
                         }
                     }
-                    
-                    temp = Matcher.checkDRL(m, keyArr, i, j);
+
+                                        
+                    temp = Matcher.checkDLU(m, keyArr, i, j);
                     if (!found){
                         count += temp.count;
                         if (temp.flag && index != -1){
                             time = System.nanoTime() - tempStart;
-                            System.out.println("Keyword \'" + keyword + "\' found diagonally! (right lower)");
+                              System.out.println("Keyword \'" + "\u001B[1m\u001B[38;5;" + (((keyArr.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m"  + keyword + "\u001B[0m\' found diagonally! (left upper)");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ns (" + String.format("%.3f", (double)(time / 10e5)) + " ms)");
                             found = true;
                         } 
                     }
-                    
-                    temp = Matcher.checkHR(m, keyArr, i, j);
+
+                    temp = Matcher.checkVU(m, keyArr, i, j);
                     if (!found){
                         count += temp.count;
-                        if (temp.flag && index != -1){
+                        if (temp.flag && index != -1 ){
                             time = System.nanoTime() - tempStart;
-                            System.out.println("Keyword \'" + keyword + "\' found horizontally right!");
+                              System.out.println("Keyword \'" + "\u001B[1m\u001B[38;5;" + (((keyArr.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m"  + keyword + "\u001B[0m\' found vertically upper!");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ns (" + String.format("%.3f", (double)(time / 10e5)) + " ms)");
                             found = true;
-                        }
+                        } 
                     }
 
                     temp = Matcher.checkDRU(m, keyArr, i, j);
@@ -72,32 +97,13 @@ public class SearchWord {
                         count += temp.count;
                         if (temp.flag && index != -1 && !found){
                             time = System.nanoTime() - tempStart;
-                            System.out.println("Keyword \'" + keyword + "\' found diagonally! (right upper)");
+                               System.out.println("Keyword \'" + "\u001B[1m\u001B[38;5;" + (((keyArr.length + (16 *  i)  + (16 * j) + 19) % 185) + 20) + "m"  + keyword + "\u001B[0m\' found diagonally! (right upper)");
                             System.out.println("Comparison: " + count + " time(s) | " + time + " ns (" + String.format("%.3f", (double)(time / 10e5)) + " ms)");
                             found = true;
                         } 
                     }  
-                    temp = Matcher.checkVU(m, keyArr, i, j);
-                    if (!found){
-                        count += temp.count;
-                        if (temp.flag && index != -1 ){
-                            time = System.nanoTime() - tempStart;
-                            System.out.println("Keyword \'" + keyword + "\' found vertically upper!");
-                            System.out.println("Comparison: " + count + " time(s) | " + time + " ns (" + String.format("%.3f", (double)(time / 10e5)) + " ms)");
-                            found = true;
-                        } 
-                    }
-                    
-                    temp = Matcher.checkDLU(m, keyArr, i, j);
-                    if (!found){
-                        count += temp.count;
-                        if (temp.flag && index != -1){
-                            time = System.nanoTime() - tempStart;
-                            System.out.println("Keyword \'" + keyword + "\' found diagonally! (left upper)");
-                            System.out.println("Comparison: " + count + " time(s) | " + time + " ns (" + String.format("%.3f", (double)(time / 10e5)) + " ms)");
-                            found = true;
-                        } 
-                    }
+
+
                 }
                 j = j + 1;
             }
