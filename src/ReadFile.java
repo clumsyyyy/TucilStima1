@@ -49,7 +49,7 @@ public class ReadFile{
                 lineReader.nextLine();
                 while(lineReader.hasNextLine()){
                     String kw = lineReader.nextLine();
-                    keywords.add(kw);
+                    keywords.add(kw.trim());
                 }
                 
             } finally {
