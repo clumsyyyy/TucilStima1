@@ -1,7 +1,7 @@
 # Penyelesaian Word Search Puzzle dengan Algoritma Brute Force
 
 > Program penyelesaian _word search puzzle_ menggunakan bahasa pemrograman _Java_ dan algoritma _brute force_
-> sebagai Tugas Kecil 1 Mata Kuliah IF2211Strategi Algoritma
+> sebagai Tugas Kecil 1 Mata Kuliah IF2211 Strategi Algoritma
 
 ## Daftar Isi
 - [Deskripsi Singkat](#deskripsi-singkat)
@@ -28,11 +28,19 @@ ada _keyword_ yang ditemukan. Di akhir program, matriks berupa _puzzle_ dengan p
 ## Instalasi
 
 1. **[RECOMMENDED]** Menggunakan Java(TM) SE Runtime Environment (build 17+35-LTS-2724) (versi 2021-09-14)
-2. Ekstraksi folder ini ke _local_
+2. **[RECOMMENDED]** Menjalankan program di **terminal Visual Studio Code** di OS Windows 10 (Program diuji di Windows 10, namun dapat dijalankan di WSL2 dengan Ubuntu 20.04)
+3. Ekstraksi folder ini ke komputer Anda
 
 ## Penggunaan
 
-### Melalui Terminal _Visual Studio Code_
+### Melalui Terminal _Visual Studio Code_ / _WSL 2_
+**[IMPORTANT]** Untuk menjalankan di WSL 2, pastikan sudah melakukan instalasi Java dengan perintah:
+```
+sudo apt update
+sudo apt-get install openjdk-17-jre-headless
+java -version //untuk mengecek versi Java
+```
+
 1. Pastikan sedang berada di folder `root`
 2. Navigasi ke folder `src` dengan perintah `cd src`
 3. Ketikkan perintah berikut: 
@@ -40,7 +48,7 @@ ada _keyword_ yang ditemukan. Di akhir program, matriks berupa _puzzle_ dengan p
 javac -d ../bin ./*.java
 ```
 Perintah ini akan mengkompilasi file `.class` di folder `src` ke dalam folder `bin`.
-4. Nvigasi ke folder `bin` dengan perintah:
+4. Navigasi ke folder `bin` dengan perintah:
 ```
 cd ..
 cd bin
@@ -48,7 +56,7 @@ cd bin
 5. Jalankan perintah `java MainProgram` untuk menjalankan program.
 ### Melalui _Batch File_
 
-[**IMPORTANT**] Metode ini akan melakukan kompilasi secara otomatis, namun untuk dapat melihat pewarnaan, pengguna harus
+[**IMPORTANT**] Metode ini akan melakukan kompilasi secara otomatis, namun untuk dapat melihat pewarnaan _puzzle_, pengguna harus
 mengubah nilai variabel di Registry Editor. Untuk melakukannya:
 1. Buka Registry Editor (dapat melalui _search bar_ atau _shortcut_ `Win + R` dan mengisikan `regedit`)
 2. Navigasikan ke folder `HKEY_CURRENT_USER/CONSOLE`. Klik kanan di area putih, pilih `New > DWORD (32-bit value)`
