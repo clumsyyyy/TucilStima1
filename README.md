@@ -33,6 +33,8 @@ ada _keyword_ yang ditemukan. Di akhir program, matriks berupa _puzzle_ dengan p
 
 ## Penggunaan
 
+Program dapat dijalankan melalui terminal Visual Studio Code / WSL2 dan _batch file_ (khusus Windows). Penggunaan terminal Visual Studio Code / WSL2 via VSCode dapat memberikan hasil akhir yang lebih rapi (pewarnaan matriks + _bold_ kata-kata yang terdeteksi) meskipun kompilasi harus dilakukan secara manual, sedangkan penggunaan _batch file_ tidak mengharuskan pengguna untuk melakukan kompilasi manual, namun untuk memunculkan pewarnaan di _Command Prompt_, pengguna harus melakukan pengubahan nilai di _Registry Editor_.
+
 ### Melalui Terminal _Visual Studio Code_ / _WSL 2_
 **[IMPORTANT]** Untuk menjalankan di WSL 2, pastikan sudah melakukan instalasi Java dengan perintah:
 ```
@@ -41,19 +43,22 @@ sudo apt-get install openjdk-17-jre-headless
 java -version //untuk mengecek versi Java
 ```
 
-1. Pastikan sedang berada di folder `root`
+1. Pastikan sedang berada di folder `root` dan membuka terminal
 2. Navigasi ke folder `src` dengan perintah `cd src`
 3. Ketikkan perintah berikut: 
 ```
 javac -d ../bin ./*.java
 ```
-Perintah ini akan mengkompilasi file `.class` di folder `src` ke dalam folder `bin`.
+Perintah ini akan mengkompilasi file `.class` di folder `src` ke dalam folder `bin`.]
+
 4. Navigasi ke folder `bin` dengan perintah:
 ```
 cd ..
 cd bin
 ```
-5. Jalankan perintah `java MainProgram` untuk menjalankan program.
+5. Jalankan perintah `java MainProgram` di terminal untuk menjalankan program.
+
+
 ### Melalui _Batch File_
 
 [**IMPORTANT**] Metode ini akan melakukan kompilasi secara otomatis, namun untuk dapat melihat pewarnaan _puzzle_, pengguna harus
@@ -72,4 +77,5 @@ Setelah itu, lakukan langkah-langkah berikut untuk menjalankan program:
 
 ## Identitas
 NIM: 13520124
+
 Nama: Owen Christian Wijaya
