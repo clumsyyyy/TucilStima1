@@ -42,7 +42,9 @@ sudo apt update
 sudo apt-get install openjdk-17-jre-headless
 java -version //untuk mengecek versi Java
 ```
+Eksekusi di WSL2 cenderung mempunyai waktu eksekusi yang lebih lama dibandingkan di terminal _VSCode_ (_screenshot_ di laporan diuji di sistem operasi Windows 10)
 
+#### Tahap Kompilasi dan Eksekusi
 1. Pastikan sedang berada di folder `root` dan membuka terminal
 2. Navigasi ke folder `src` dengan perintah `cd src`
 3. Ketikkan perintah berikut: 
