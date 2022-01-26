@@ -28,7 +28,7 @@ ada _keyword_ yang ditemukan. Di akhir program, matriks berupa _puzzle_ dengan p
 ## Instalasi
 
 1. **[RECOMMENDED]** Menggunakan Java(TM) SE Runtime Environment (build 17+35-LTS-2724) (versi 2021-09-14)
-2. **[RECOMMENDED]** Menjalankan program di **terminal Visual Studio Code** di OS Windows 10 (Program diuji di Windows 10, namun dapat dijalankan di WSL2 dengan Ubuntu 20.04)
+2. **[RECOMMENDED]** Menjalankan program di **terminal Visual Studio Code** di OS Windows 10 (**Program diuji di Windows 10**, namun dapat dijalankan di WSL2 dengan Ubuntu 20.04 (hasil eksekusi cenderung lebih lama))
 3. Ekstraksi folder ini ke komputer Anda
 
 ## Penggunaan
